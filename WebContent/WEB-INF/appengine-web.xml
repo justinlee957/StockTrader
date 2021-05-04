@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appengine-web-app xmlns="http://appengine.google.com/ns/1.0">
+  <application>Assignment4</application><!-- unused for Cloud SDK based tooling -->
+  <version>alpha-001</version><!-- unused for Cloud SDK based tooling -->
+  <threadsafe>true</threadsafe>
+  <runtime>java8</runtime>
+  <use-google-connector-j>true</use-google-connector-j>
+</appengine-web-app>

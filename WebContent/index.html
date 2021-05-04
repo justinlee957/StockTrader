@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="css/styles.css">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>SalStocks</title>
+    </head>
+    <body>
+        <div id = "page">
+            <div id = "nav">
+                <div id = "navWrapper">
+                    <a class = "navBtns" onClick = "showLanding()">SalStocks</a>
+                    <div id = "rightNavBtns">
+                        <a class = "navBtns" onClick = "showLanding()">Home/Search</a>
+                        <a class = "navBtns loggedInBtn" onClick = "showFavorites()">Favorites</a>
+                        <a class = "navBtns loggedInBtn" onClick = "showPortfolio()">Portfolio</a>
+                        <a id = "loginNavBtn" class = "navBtns" onClick = "showLogin()">Login/Sign Up</a>
+                        <a class = "navBtns loggedInBtn" onClick = "logout()">Logout</a>
+                    </div>
+                </div>
+            </div>
+            <div id = "landing">
+                <p id = "stockSearchTitle">STOCK SEARCH</p>
+                <div id = "searchWrapper">
+                <div></div>
+                    <input id = "stockSearchInput" placeholder = "Enter Stock Ticker"/>
+                    <img id = "searchIcon" onClick = "stockSearch()" src="images/search.png" alt="search icon">
+                </div>
+            </div>
+            <div id = "stockInfoPage" class = "stockInfoPage">
+            	<p id = "ticker" class = "ticker">GOOG</p>
+            	<p id = "stockName" class = "stockName">Alphabet Inc - Class C</p>
+            	<p id = "exchangeCode" class = "exchangeCode">NASDAQ</p>
+            	<p id = "summary" class = "summary">Summary</p>
+            	<hr id = "summaryLine" class = "summaryLine">
+            	<div id = "stockPrices" class = "stockPrices">
+	            	<dl>
+					  <dt>High Price</dt>
+					  <dd id = "highPrice" class = "highPrice">111</dd>
+					  <dt>Low Price</dt>
+					  <dd id = "lowPrice" class = "lowPrice">22222</dd>
+					  <dt>Open Price</dt>
+					  <dd id = "openPrice" class = "openPrice">33333333</dd>
+					  <dt>Close</dt>
+					  <dd id = "close" class = "close">44</dd>
+					  <dt>Volume</dt>
+					  <dd id = "volume" class = "volume">5555555</dd>
+					</dl>
+				</div>
+				<p id = "descriptionTitle" class = "descriptionTitle">Company's Description</p>
+				<p id = "description" class = "description">Start Date: 2014-03-27 <br><br> abnousdabsuodbuaosdoausbduoasbduoasduoabuodaabnousdabsuodbuaosdoausbduoasbduoasduoabuodasduoasbdabnousdabsuodbuaosdoausbduoasbduoasduoabuodasduoasbdabnousdabsuodbuaosdoausbduoasbduoasduoabuodasduoasbdsduoasbd</p>
+            </div>
+            <div id = "loggedInstockInfoPage" class = "stockInfoPage">
+            	<div id = "stockHeaderWrapper">
+	            	<div>
+	            		<div style = "display:flex">
+			            	<a id = "loggedticker" class = "ticker">GOOG</a>
+			            	<div class = "rating"><span id = "star" onClick = "favoriteStock()"></span></div>
+		            	</div>
+		            	<p id = "loggedstockName" class = "stockName">Alphabet Inc - Class C</p>
+		            	<p id = "loggedexchangeCode" class = "exchangeCode">NASDAQ</p>
+		            	<label for = "quantity">Quantity: </label>
+	            		<input name = "quantity" id = "quantityInput" class = "quantityInput">
+	            		<br>
+	            		<button id = "buyBtn" onClick = "buyStocks()">Buy</button>
+	            	</div>
+	            	<div style = "text-align: end">
+	            		<p id = "lastPrice">33.73</p>
+	            		<div id = "changeWrapper">
+	            			<div id = "arrow" class = "arrowUp"></div>
+	            			<p id = "change">-0.66(-1.94)%</p>
+	            		</div>
+	            		<p id = "currentTime">2021-04-01 08:24:36</p>
+	            	</div>
+            	</div>
+            	<div id = "marketStatus">Market is open</div>
+            	<p id = "summary" class = "summary">Summary</p>
+            	<hr id = "summaryLine" class = "summaryLine">
+            	<div id = "summaryInfo">
+	            	<div class = "summaryInfoBlocks">
+	            		<p>High Price:</p>
+	            		<p>Low Price:</p>
+	            		<p>Open Price:</p>
+	            		<p>Prev. Close:</p>
+	            		<p>Volume:</p>
+	            	</div>
+	            	<div class = "summaryInfoBlocks">
+	            		<p id = "loggedhighPrice">10</p>
+	            		<p id = "loggedlowPrice">10</p>
+	            		<p id = "loggedopenPrice">10</p>
+	            		<p id = "loggedclose">10</p>
+	            		<p id = "loggedvolume">10</p>
+	            	</div>
+	            	<div class = "summaryInfoBlocks">
+			            <p>Mid Price:</p>
+	            		<p>Ask Price:</p>
+	            		<p>Ask Size:</p>
+	            		<p>Bid Price:</p>
+	            		<p>Bid Size:</p>
+	            	</div>
+	            	<div class = "summaryInfoBlocks">
+	            		<p id = "midPrice">10</p>
+	            		<p id = "askPrice">10</p>
+	            		<p id = "askSize">10</p>
+	            		<p id = "bidPrice">10</p>
+	            		<p id = "bidSize">10</p>
+	            	</div>
+            	</div>	
+				<p id = "descriptionTitle" class = "descriptionTitle">Company's Description</p>
+				<p id = "loggeddescription" class = "description">Start Date: 2014-03-27 <br><br> abnousdabsuodbuaosdoausbduoasbduoasduoabuodaabnousdabsuodbuaosdoausbduoasbduoasduoabuodasduoasbdabnousdabsuodbuaosdoausbduoasbduoasduoabuodasduoasbdabnousdabsuodbuaosdoausbduoasbduoasduoabuodasduoasbdsduoasbd</p>
+            </div>
+            <div id = "portfolio">
+            	<p id = "portfolioTitle">My Portfolio</p>
+            	<div id = "balanceInfo">
+            		<a>Cash Balance: </a> <a id = "cashBalance">50,000</a>
+            		<br>
+            		<a>Total Account Value: </a><a id = "accountValue">50,000</a>
+            	</div>
+            	<div id = "purchases">
+            	
+            	</div>
+            </div>
+            <div id = "favorites">
+            	<p id = "favoritesTitle">My Favorites</p>
+            	<div class = "favorite">
+            		<img class = "deleteFavoriteBtn" src = "images/x2.png" alt="x"/>
+            		<div class = "favoriteClick">
+	            		<div class = "favoriteNameWrapper">
+	            			<p class = "favoriteTicker">GOOG</p>
+	            			<p class = "favoriteName">Alphabet Inc - Class C</p>
+	            		</div>
+	            		<div class = "favoriteNumbers">
+	            			<p class = "favoriteLastPrice">2,098.23</p>
+	            			<div class = "favArrowWrap">
+		            			<div class="favArrow favArrowDown"></div>
+		            			<p class = "favoriteChange">14.3(0.71)%</p>
+	            			</div>
+	            		</div>
+            		</div>
+            	</div>
+            </div>
+            <div id = "loginSection">
+                <form class = "loginWrapper" action="javascript:void(0);" onSubmit = "login()">
+                    <p class = "loginTitle">Login</p>
+                    <p class = "inputLabel">Username</p>
+                    <input id = "loginUsername" class = "loginInput" type = "text" required/>
+                    <p class = "inputLabel">Password</p>
+                    <input id = "loginPassword" class = "loginInput" type = "password" required/>
+                    <button type = "submit" value = "submit" class = "loginBtn">
+                    <img src="images/login.png" alt="login icon"/>Sign In
+                    </button>
+                    <hr style= "width: 50%;margin-top: 4%;">
+                    <button id = "googleBtn" class = "customGPlusSignIn loginBtn" type="button">
+                    <img src="images/google.png" alt="google icon"/>Sign In with Google
+                    </button>
+                </form>
+                <form class = "loginWrapper" action="javascript:void(0);" onSubmit = "register()">
+                    <p class = "loginTitle">Sign up</p>
+                    <p class = "inputLabel">Email</p>
+                    <input id = "email" class = "loginInput" type = "email" required/>
+                    <p class = "inputLabel">Username</p>
+                    <input id = "username" class = "loginInput" type = "text" required/>
+                    <p class = "inputLabel">Password</p>
+                    <input id = "password" class = "loginInput" type = "password" required/>
+                    <p class = "inputLabel">Confirm Password</p>
+                    <input id = "confirmPassword" class = "loginInput" type = "password" required/>
+                    <div style = "margin-top: 5%; font-size: 17px;">
+                        <input type="radio" name = "terms" required>
+				    	<label for="terms">I have read and agree to all terms and conditions of SalEats.</label>
+                    </div>
+                    <button type = "submit" value = "submit" class = "loginBtn" style = "margin-top: 1%">
+                    <img src="images/addUser1.png" alt="register icon"/>Create Account
+                    </button>
+                </form>
+            </div>
+        </div>
+        <script type="text/javascript" src="js/Utils.js"></script>
+        <script type="text/javascript" src="js/dynamicComponents.js"></script>
+        <script type="text/javascript" src="js/functionality.js"></script>
+        <script type="text/javascript" src="js/login.js"></script>
+        <script src="https://apis.google.com/js/api:client.js"></script>
+    </body>
+</html>
